@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 public class ValidateUtility {
 	private static Pattern inputLetterPattern = Pattern.compile("[a-zA-Z]");
-	private static Pattern inputNumberPattern = Pattern.compile("\\d+");
+	private static Pattern inputNumberPattern = Pattern.compile("[1-9][0-9]+");
 	private int personsCount;
 	private Boolean isCorrect;
 	
@@ -29,7 +29,7 @@ public class ValidateUtility {
 		}
 		return isCorrect;
 	}
-	boolean isNumberAndAbleToDivide(String input) {
+	public boolean isNumberAndAbleToDivide(String input) {
 		Boolean isNumber=false;
 		Matcher matcher = inputNumberPattern.matcher(input);
 		if(matcher.matches()){
@@ -44,7 +44,7 @@ public class ValidateUtility {
 		return isNumber;
 	}
 	
-	boolean isLetter(String input) {
+	public boolean isLetter(String input) {
 		Matcher matcher = inputLetterPattern.matcher(input);
 		return matcher.matches();
 	}
